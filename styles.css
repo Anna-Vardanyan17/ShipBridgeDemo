@@ -698,3 +698,6 @@ body {
     padding: 1rem 0;
   }
 }
+.site-header {
+  padding-left: calc(90px + 1.25rem);
+}
