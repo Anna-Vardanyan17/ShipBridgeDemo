@@ -1,0 +1,145 @@
+{
+  "orders": [
+    {
+      "id": "ORD-10482",
+      "created_at": "2026-05-22T09:14:00Z",
+      "status": "new",
+      "customer": {
+        "name": "Maya Cohen",
+        "email": "maya.c@email.com",
+        "phone": "+972-54-555-0123",
+        "address": "12 Rothschild Blvd",
+        "city": "Tel Aviv",
+        "country": "IL",
+        "postal_code": "6688101"
+      },
+      "seller": {
+        "name": "Urban Threads Ltd",
+        "warehouse": "14 HaMelacha St, Rishon LeZion",
+        "contact": "warehouse@urbanthreads.co.il"
+      },
+      "items": [
+        { "sku": "UT-HOOD-GRY-M", "name": "Classic Hoodie Grey M", "qty": 1, "price": 189.0 },
+        { "sku": "UT-TOTE-NAT", "name": "Canvas Tote Natural", "qty": 1, "price": 59.0 }
+      ],
+      "total": 248.0,
+      "currency": "ILS",
+      "weight_kg": 1.4
+    },
+    {
+      "id": "ORD-10479",
+      "created_at": "2026-05-21T16:42:00Z",
+      "status": "ready_to_ship",
+      "customer": {
+        "name": "Daniel Weiss",
+        "email": "d.weiss@email.com",
+        "phone": "+972-52-777-8899",
+        "address": "5 Herzl St",
+        "city": "Haifa",
+        "country": "IL",
+        "postal_code": "3309511"
+      },
+      "seller": {
+        "name": "GadgetHub Dropship",
+        "warehouse": "Kiryat Ata Industrial Zone, Bldg 7",
+        "contact": "fulfill@gadgethub.io"
+      },
+      "items": [
+        { "sku": "GH-BUDS-WHT", "name": "Wireless Earbuds Pro", "qty": 1, "price": 299.0 }
+      ],
+      "total": 299.0,
+      "currency": "ILS",
+      "weight_kg": 0.35
+    },
+    {
+      "id": "ORD-10475",
+      "created_at": "2026-05-21T11:08:00Z",
+      "status": "ready_to_ship",
+      "customer": {
+        "name": "Sarah Levi",
+        "email": "sarah.levi@email.com",
+        "phone": "+972-50-333-2211",
+        "address": "88 Ben Yehuda",
+        "city": "Jerusalem",
+        "country": "IL",
+        "postal_code": "9422105"
+      },
+      "seller": {
+        "name": "HomeNest Store",
+        "warehouse": "Modiin Logistics Park, Unit 12",
+        "contact": "ops@homenest.shop"
+      },
+      "items": [
+        { "sku": "HN-LAMP-WHT", "name": "Desk Lamp LED", "qty": 2, "price": 129.0 },
+        { "sku": "HN-CABLE-3M", "name": "USB-C Cable 3m", "qty": 1, "price": 39.0 }
+      ],
+      "total": 297.0,
+      "currency": "ILS",
+      "weight_kg": 2.1
+    },
+    {
+      "id": "ORD-10468",
+      "created_at": "2026-05-20T08:55:00Z",
+      "status": "shipped",
+      "customer": {
+        "name": "Omer Barak",
+        "email": "omer.b@email.com",
+        "phone": "+972-54-111-4455",
+        "address": "3 Weizmann St",
+        "city": "Rehovot",
+        "country": "IL",
+        "postal_code": "7638403"
+      },
+      "seller": {
+        "name": "SportFlex EU",
+        "warehouse": "Ashdod Port Warehouse 2",
+        "contact": "ship@sportflex.eu"
+      },
+      "items": [
+        { "sku": "SF-RUN-BLK-42", "name": "Running Shoes Black 42", "qty": 1, "price": 449.0 }
+      ],
+      "total": 449.0,
+      "currency": "ILS",
+      "weight_kg": 1.1,
+      "shipping": {
+        "carrier": "Israel Post",
+        "service": "Express",
+        "tracking": "IL9876543210",
+        "cost": 32.5,
+        "booked_at": "2026-05-20T10:30:00Z"
+      }
+    },
+    {
+      "id": "ORD-10461",
+      "created_at": "2026-05-19T14:20:00Z",
+      "status": "delivered",
+      "customer": {
+        "name": "Noa Friedman",
+        "email": "noa.f@email.com",
+        "phone": "+972-58-999-7766",
+        "address": "22 Dizengoff",
+        "city": "Tel Aviv",
+        "country": "IL",
+        "postal_code": "6433209"
+      },
+      "seller": {
+        "name": "BeautyBox IL",
+        "warehouse": "Petah Tikva, Amal 18",
+        "contact": "hello@beautybox.co.il"
+      },
+      "items": [
+        { "sku": "BB-SERUM-30", "name": "Vitamin C Serum 30ml", "qty": 1, "price": 89.0 }
+      ],
+      "total": 89.0,
+      "currency": "ILS",
+      "weight_kg": 0.2,
+      "shipping": {
+        "carrier": "HFD",
+        "service": "Standard",
+        "tracking": "HFD5544332211",
+        "cost": 18.0,
+        "booked_at": "2026-05-19T16:00:00Z"
+      }
+    }
+  ]
+}
