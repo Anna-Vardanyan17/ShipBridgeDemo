@@ -3,86 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PackRoute — order fulfillment and shipping demo" />
-  <title>PackRoute · Fulfillment Demo</title>
+  <meta name="description" content="PackRoute — e-commerce fulfillment & shipping from seller to customer" />
+  <title>PackRoute · Fulfillment & Shipping</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true">PR</span>
-        <div class="brand-text">
-          <strong>PackRoute</strong>
-          <span>Fulfillment demo</span>
-        </div>
+  <div class="site">
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-icon">PR</span>
+        <span class="logo-name">PackRoute</span>
       </div>
+      <span class="header-tagline">Seller → Customer delivery</span>
+    </header>
 
-      <nav class="nav" aria-label="Main">
-        <button class="nav-item is-active" data-view="dashboard" type="button">Dashboard</button>
-        <button class="nav-item" data-view="orders" type="button">Orders</button>
-        <button class="nav-item" data-view="shipping" type="button">Shipping queue</button>
-      </nav>
+    <main class="site-main">
 
-      <div class="sidebar-foot">
-        <p class="api-status" id="apiStatus">
-          <span class="dot dot--loading"></span>
-          Connecting to API…
-        </p>
-      </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <div>
-          <h1 id="pageTitle">Dashboard</h1>
-          <p class="subtitle" id="pageSubtitle">Orders from your store API · book seller to client shipping</p>
-        </div>
-        <div class="topbar-actions">
-          <button class="btn btn--ghost" id="refreshBtn" type="button">Refresh orders</button>
-          <button class="btn btn--primary" id="syncBtn" type="button">Sync from store API</button>
-        </div>
-      </header>
-
-      <section class="view view--active" id="view-dashboard">
-        <div class="stats-grid">
-          <article class="stat-card">
-            <span class="stat-label">New orders</span>
-            <strong class="stat-value" id="statNew">—</strong>
-            <span class="stat-hint">Awaiting fulfillment</span>
-          </article>
-          <article class="stat-card stat-card--accent">
-            <span class="stat-label">Ready to ship</span>
-            <strong class="stat-value" id="statReady">—</strong>
-            <span class="stat-hint">Pick a carrier</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">In transit</span>
-            <strong class="stat-value" id="statTransit">—</strong>
-            <span class="stat-hint">Tracking active</span>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Revenue (demo)</span>
-            <strong class="stat-value" id="statRevenue">—</strong>
-            <span class="stat-hint">Order totals</span>
-          </article>
-        </div>
-
-        <div class="panel">
-          <div class="panel-head">
-            <h2>Recent orders</h2>
-            <a href="#" class="link" data-view-link="orders">View all</a>
+      <!-- HOME -->
+      <section class="page page--active" id="page-home">
+        <div class="hero">
+          <p class="hero-eyebrow">E-commerce fulfillment</p>
+          <h1>We receive your orders.<br />We ship to your customers.</h1>
+          <p class="hero-text">
+            PackRoute connects online stores to reliable carriers — picking up from the seller's warehouse and delivering straight to the buyer's door.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn--primary btn--lg" type="button" data-go="orders">View live orders</button>
+            <button class="btn btn--outline btn--lg" type="button" data-go="services">How it works</button>
           </div>
-          <div class="table-wrap">
-            <table class="data-table" id="dashboardTableRecent">
+        </div>
+
+        <div class="hero-stats">
+          <article class="mini-stat">
+            <strong id="homeStatOrders">—</strong>
+            <span>Active orders</span>
+          </article>
+          <article class="mini-stat">
+            <strong>24h</strong>
+            <span>Avg. dispatch</span>
+          </article>
+          <article class="mini-stat">
+            <strong>98%</strong>
+            <span>On-time delivery</span>
+          </article>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card--teal">
+            <span class="feature-icon">📦</span>
+            <h3>Order intake</h3>
+            <p>Orders flow in automatically from your store API — Shopify, WooCommerce, or custom.</p>
+          </article>
+          <article class="feature-card feature-card--coral">
+            <span class="feature-icon">🚚</span>
+            <h3>Smart shipping</h3>
+            <p>Compare carriers, book the best route from seller warehouse to customer address.</p>
+          </article>
+          <article class="feature-card feature-card--navy">
+            <span class="feature-icon">📍</span>
+            <h3>Live tracking</h3>
+            <p>Tracking numbers and status updates for every shipment, all in one place.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="page" id="page-services">
+        <div class="page-head">
+          <h2>How PackRoute works</h2>
+          <p>Three simple steps from online sale to doorstep delivery.</p>
+        </div>
+        <ol class="steps">
+          <li class="step-card">
+            <span class="step-num">1</span>
+            <div>
+              <h3>Store sends an order</h3>
+              <p>Your e-commerce platform pushes order details — customer, items, seller location — to our API.</p>
+            </div>
+          </li>
+          <li class="step-card">
+            <span class="step-num">2</span>
+            <div>
+              <h3>We prepare &amp; route</h3>
+              <p>The seller packs the order. We mark it ready and choose the best carrier for that route.</p>
+            </div>
+          </li>
+          <li class="step-card">
+            <span class="step-num">3</span>
+            <div>
+              <h3>Customer receives the package</h3>
+              <p>Israel Post, HFD, FedEx and more — tracked from warehouse to front door.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="cta-banner">
+          <h3>Ready to try the demo?</h3>
+          <p>See real sample orders and book a shipment in the Orders tab.</p>
+          <button class="btn btn--white" type="button" data-go="orders">Open orders dashboard</button>
+        </div>
+      </section>
+
+      <!-- ORDERS -->
+      <section class="page" id="page-orders">
+        <div class="page-head page-head--row">
+          <div>
+            <h2>Orders dashboard</h2>
+            <p id="apiStatus" class="api-pill"><span class="dot dot--loading"></span> Loading…</p>
+          </div>
+          <div class="page-head-actions">
+            <button class="btn btn--ghost btn--sm" id="refreshBtn" type="button">Refresh</button>
+            <button class="btn btn--primary btn--sm" id="syncBtn" type="button">Sync API</button>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <article class="stat-chip stat-chip--new"><span>New</span><strong id="statNew">—</strong></article>
+          <article class="stat-chip stat-chip--ready"><span>Ready</span><strong id="statReady">—</strong></article>
+          <article class="stat-chip stat-chip--transit"><span>In transit</span><strong id="statTransit">—</strong></article>
+          <article class="stat-chip stat-chip--rev"><span>Revenue</span><strong id="statRevenue">—</strong></article>
+        </div>
+
+        <div class="card">
+          <label class="search-field">
+            <input type="search" id="orderSearch" placeholder="Search orders…" />
+          </label>
+          <select id="statusFilter" class="select-field">
+            <option value="">All statuses</option>
+            <option value="new">New</option>
+            <option value="ready_to_ship">Ready to ship</option>
+            <option value="shipped">Shipped</option>
+            <option value="delivered">Delivered</option>
+          </select>
+          <div class="table-scroll">
+            <table class="data-table" id="ordersTable">
               <thead>
                 <tr>
                   <th>Order</th>
                   <th>Customer</th>
-                  <th>Items</th>
                   <th>Total</th>
                   <th>Status</th>
                   <th></th>
@@ -94,114 +154,93 @@
         </div>
       </section>
 
-      <section class="view" id="view-orders">
-        <div class="toolbar">
-          <label class="search">
-            <span class="sr-only">Search orders</span>
-            <input type="search" id="orderSearch" placeholder="Search order ID, customer, city…" />
-          </label>
-          <select id="statusFilter" aria-label="Filter by status">
-            <option value="">All statuses</option>
-            <option value="new">New</option>
-            <option value="ready_to_ship">Ready to ship</option>
-            <option value="shipped">Shipped</option>
-            <option value="delivered">Delivered</option>
-          </select>
+      <!-- SHIPPING -->
+      <section class="page" id="page-shipping">
+        <div class="page-head">
+          <h2>Shipping queue</h2>
+          <p>Orders waiting for carrier booking — seller warehouse to client.</p>
         </div>
-
-        <div class="panel">
-          <div class="table-wrap">
-            <table class="data-table" id="ordersTable">
-              <thead>
-                <tr>
-                  <th>Order</th>
-                  <th>Date</th>
-                  <th>Customer</th>
-                  <th>Seller</th>
-                  <th>Destination</th>
-                  <th>Total</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
+        <div id="shippingQueue" class="queue-list"></div>
       </section>
 
-      <section class="view" id="view-shipping">
-        <div class="panel">
-          <div class="panel-head">
-            <h2>Shipping queue</h2>
-            <p class="muted">Orders that need a carrier booked from seller to client</p>
-          </div>
-          <div class="queue-list" id="shippingQueue"></div>
+      <!-- CONTACT -->
+      <section class="page" id="page-contact">
+        <div class="page-head">
+          <h2>Contact us</h2>
+          <p>Get in touch to connect your store or ask about fulfillment pricing.</p>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Your name<input type="text" name="name" required placeholder="Full name" /></label>
+          <label>Email<input type="email" name="email" required placeholder="you@company.com" /></label>
+          <label>Store / business<input type="text" name="business" placeholder="Store name" /></label>
+          <label>Message<textarea name="message" rows="4" placeholder="Tell us about your shipping needs…"></textarea></label>
+          <button class="btn btn--primary btn--lg" type="submit">Send message</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>Email</strong> hello@packroute.demo</p>
+          <p><strong>Hours</strong> Sun–Thu, 9:00–18:00</p>
+          <p><strong>Service area</strong> Israel &amp; international</p>
         </div>
       </section>
     </main>
+
+    <!-- Bottom navigation -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="bottom-nav-btn is-active" type="button" data-page="home">
+        <span class="nav-icon">🏠</span>
+        <span>Home</span>
+      </button>
+      <button class="bottom-nav-btn" type="button" data-page="services">
+        <span class="nav-icon">⚡</span>
+        <span>Services</span>
+      </button>
+      <button class="bottom-nav-btn" type="button" data-page="orders">
+        <span class="nav-icon">📋</span>
+        <span>Orders</span>
+      </button>
+      <button class="bottom-nav-btn" type="button" data-page="shipping">
+        <span class="nav-icon">🚚</span>
+        <span>Shipping</span>
+      </button>
+      <button class="bottom-nav-btn" type="button" data-page="contact">
+        <span class="nav-icon">✉️</span>
+        <span>Contact</span>
+      </button>
+    </nav>
   </div>
 
-  <dialog class="modal" id="shipModal" aria-labelledby="shipModalTitle">
-    <form method="dialog" class="modal-inner" id="shipForm">
-      <header class="modal-head">
-        <div>
-          <h2 id="shipModalTitle">Book shipping</h2>
-          <p class="muted" id="shipModalSub">Seller warehouse to customer</p>
-        </div>
-        <button type="button" class="icon-btn" id="closeModal" aria-label="Close">&times;</button>
+  <dialog class="modal" id="shipModal">
+    <form method="dialog" class="modal-box" id="shipForm">
+      <header class="modal-top">
+        <h2 id="shipModalTitle">Book shipping</h2>
+        <button type="button" class="modal-close" id="closeModal">&times;</button>
       </header>
-
       <div class="modal-body">
-        <div class="route-card">
-          <div class="route-point">
-            <span class="route-tag">From · Seller</span>
-            <strong id="routeFrom">—</strong>
-          </div>
-          <span class="route-arrow" aria-hidden="true">&rarr;</span>
-          <div class="route-point">
-            <span class="route-tag">To · Client</span>
-            <strong id="routeTo">—</strong>
-          </div>
+        <div class="route-line">
+          <div><small>From seller</small><strong id="routeFrom">—</strong></div>
+          <span class="route-arrow">→</span>
+          <div><small>To customer</small><strong id="routeTo">—</strong></div>
         </div>
-
-        <div class="field-grid">
-          <label>
-            Package weight (kg)
-            <input type="number" id="pkgWeight" min="0.1" step="0.1" value="1.2" required />
-          </label>
-          <label>
-            Declared value
-            <input type="number" id="pkgValue" min="1" step="0.01" required />
-          </label>
+        <div class="field-row">
+          <label>Weight (kg)<input type="number" id="pkgWeight" min="0.1" step="0.1" value="1.2" /></label>
+          <label>Value<input type="number" id="pkgValue" min="1" step="0.01" /></label>
         </div>
-
-        <fieldset class="methods-fieldset">
-          <legend>Shipping method</legend>
-          <div class="methods-list" id="methodsList">
-            <p class="muted">Loading carriers…</p>
-          </div>
-        </fieldset>
-
-        <div class="summary-box" id="shipSummary" hidden>
-          <span>Selected</span>
+        <div class="methods-list" id="methodsList"></div>
+        <div class="ship-summary" id="shipSummary" hidden>
           <strong id="selectedMethodLabel">—</strong>
-          <span class="summary-price" id="selectedMethodPrice">—</span>
+          <span id="selectedMethodPrice">—</span>
         </div>
       </div>
-
       <footer class="modal-foot">
         <button type="button" class="btn btn--ghost" id="cancelShip">Cancel</button>
-        <button type="submit" class="btn btn--primary" id="confirmShip" disabled>Confirm and book</button>
+        <button type="submit" class="btn btn--primary" id="confirmShip" disabled>Confirm booking</button>
       </footer>
     </form>
   </dialog>
 
-  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <div class="toast-stack" id="toastStack"></div>
 
-  <script>
-    window.PACKROUTE_API = window.PACKROUTE_API || "";
-  </script>
-  <script src="js/app.js"></script>
+  <script>window.PACKROUTE_API = "";</script>
+  <script src="app.js"></script>
 </body>
 </html>
