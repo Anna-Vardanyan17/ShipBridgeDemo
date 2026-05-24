@@ -32,13 +32,11 @@ body {
 }
 
 .site {
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: 100%;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   background: var(--white);
-  box-shadow: 0 0 60px rgba(0,0,0,0.08);
 }
 
 /* Header */
@@ -87,7 +85,8 @@ body {
 .site-main {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: calc(var(--nav-h) + 1rem);
+  padding-left: 90px;
+  padding-bottom: 1rem;
 }
 
 .page {
@@ -505,21 +504,21 @@ body {
 /* Bottom navigation */
 .bottom-nav {
   position: fixed;
+  top: 0;
+  left: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 480px;
-  height: var(--nav-h);
+  width: 90px;
+  height: 100dvh;
   background: var(--white);
-  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: stretch;
-  z-index: 100;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+  padding-top: calc(var(--header-h) + 1rem);
+  z-index: 40;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.06);
 }
-
 .bottom-nav-btn {
   flex: 1;
   border: none;
@@ -673,10 +672,9 @@ body {
 
 .toast-stack {
   position: fixed;
-  bottom: calc(var(--nav-h) + 0.75rem);
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 2rem);
+  bottom: 1.5rem;
+  left: calc(90px + 1rem);
+  width: calc(100% - 90px - 2rem);
   max-width: 440px;
   z-index: 200;
 }
